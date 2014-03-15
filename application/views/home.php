@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>Seminar Nasional Informatika STT-PLN 2014</title>
-	<link rel="stylesheet" type="text/css" href="assets/script/bootstrap/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/script/bootstrap/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="assets/style/jqueryui/jquery-ui.min.css">
-	<link type="text/javascript" href="assets/script/jquery-1.11.0.min.js">
-	<link type="text/javascript" href="assets/script/jqueryui/jquery-ui.min.js">
-	<link type="text/javascript" href="assets/script/bootstrap/bootstrap.js">
+	<?php $this->load->view('templates/head')?>
 </head>
 <body>
-hahahahaha
+	<?php $this->load->view('templates/header')?>
+	<div id='content-wrapper'>
+		<?php 
+			$this->load->view($content);
+		?>
+	</div>
+	<?php $this->load->view('templates/footer')?>
 </body>
 </html>
