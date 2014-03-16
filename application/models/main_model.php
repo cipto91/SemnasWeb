@@ -47,7 +47,29 @@
 			return NULL;
 		}
 
+		private function _get_prefix() {
+			$this->db->select("nomor")
+					 ->from("master_prefix")
+					 ->order_by('id','desc')
+					 ->limit(1,0);
+			$result = $this->db->get();
+			if ($result->num_rows() > 0) {
+				return $result->result();
+			}
+			return NULL;
+		}
+
 		public function save_peserta($data) {
+			$nomor = $this->_get_prefix();
+			$nmr = 1;
+			$new_nomor = 1;
+			if ($nomor == NULL) {
+				$new_nomor = $nmr;
+			} else {
+				$new_nomor = $nomor['nomor'] + 1;
+			}
+			$result = $this->db->insert('master_prefix',array('nomor'=>$new_nomor));
+			$data['no_pendaftaran']=$new_nomor;
 			$result = $this->db->insert('master_peserta',$data);
 			if ($result) {
 				return TRUE;

@@ -44,12 +44,21 @@
 
 		public function save_peserta() {
 			$nama = $this->input->post('txt_nama');
+			$tanggal = date('Y-m-d');
 			$asal_universitas = $this->input->post('txt_univ');
 			$jurusan = $this->input->post('txt_jur');
 			$email = $this->input->post('txt_email');
 			$telp = $this->input->post('txt_telp');
 
-			$data = array("");
+			$data = array('tanggal'=>$tanggal, 'nama'=>$nama,'asal_universitas'=>$asal_universitas,
+				'no_telp'=>$telp, 'email'=>$email);
+
+			$save = $this->main_model->save_peserta($data);
+			if ($save) {
+				redirect("home/daftar_peserta");
+			} else {
+
+			}
 		}
 	}
 ?>
