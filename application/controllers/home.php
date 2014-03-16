@@ -15,5 +15,41 @@
 			$data['content'] = "templates/home_content";
 			$this->load->view('home',$data);
 		}
+
+		public function latar_belakang() {
+			if ($this->main_model->find_latar_belakang() != NULL) {
+				$data['latar_belakang'] = $this->main_model->find_latar_belakang();
+			} else {
+				$data['latar_belakang'] = array('latar_belakang' => "No Data Found..");
+			}
+			$data['content'] = "templates/latar_belakang_content";
+			$this->load->view('home',$data);
+		}
+
+		public function susunan_acara() {
+			if ($this->main_model->find_susunan_acara() != NULL) {
+				$data['susunan_acara'] = $this->main_model->find_susunan_acara();
+			} else {
+				$data['susunan_acara'] = array('susunan_acara' => "No Data Found..");
+			}
+			$data['content'] = "templates/susunan_acara_content";
+			$this->load->view('home',$data);
+		}
+
+		public function daftar_peserta() {
+			$data['form'] = $this->main_model->peserta_form();
+			$data['content'] = "templates/pendaftaran_peserta";
+			$this->load->view('home',$data);
+		}
+
+		public function save_peserta() {
+			$nama = $this->input->post('txt_nama');
+			$asal_universitas = $this->input->post('txt_univ');
+			$jurusan = $this->input->post('txt_jur');
+			$email = $this->input->post('txt_email');
+			$telp = $this->input->post('txt_telp');
+
+			$data = array("");
+		}
 	}
 ?>
