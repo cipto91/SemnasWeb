@@ -4,15 +4,20 @@
 }
 
 @font-face{
-	font-family: Nobile;
-	src: url(../fonts/Nobile/nobile.ttf);
+	font-family: "Droid Sans";
+	src: url(../fonts/DroidSans/DroidSans.ttf);
+}
+
+@font-face{
+	font-family: "News Cycle";
+	src: url(../fonts/News_Cycle/NewsCycle-Regular.ttf);
 }
 
 body {
 	margin: 0px;
 	padding: 0px;
 	background: rgb(255,255,255) url(../img/background.png) top left no-repeat fixed;
-	font-family: Nobile;
+	font-family: "Droid Sans", sans-serif;
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased;	
 	/*background-size: 65% 100%;*/
@@ -130,4 +135,30 @@ body {
 	float: left;
 	margin: 0px 0px 0px 40px;
 	padding: 10px 18px 2px 18px;
+}
+
+.slideshow-container {
+
+}
+
+.news-container {
+
+}
+
+.header-content {
+
+}
+
+.news-content {
+	width: 60%;
+	padding: 14px 0px 14px 22px;
+}
+
+.news-sparator {
+	width: 62%;
+	height: 0px;
+	/* float: left; */
+	border: #000000 solid 1px;
+	display: block;
+	margin-left: 13px;
 }

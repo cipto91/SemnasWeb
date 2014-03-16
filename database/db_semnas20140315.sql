@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `konfirmasi_peserta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `konfirmasi_peserta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_date` datetime NOT NULL,
   `no_pendaftaran` int(3) DEFAULT NULL,
   `nama_peserta` varchar(45) DEFAULT NULL,
   `total_bayar` decimal(9,2) NOT NULL DEFAULT '0.00',
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `master_berita`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `master_berita` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_date` datetime NOT NULL,
   `judul_berita` varchar(255) NOT NULL,
   `isi_berita` text,
   `tanggal` date DEFAULT NULL,
@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS `master_peserta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `master_peserta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_date` datetime NOT NULL,
   `no_pendaftaran` int(3) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `nama` varchar(45) DEFAULT NULL,
@@ -136,7 +136,7 @@ DROP TABLE IF EXISTS `master_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `master_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_date` datetime NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `nama` varchar(25) NOT NULL,

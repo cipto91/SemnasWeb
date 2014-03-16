@@ -6,8 +6,8 @@
 		}
 
 		public function index() {
-			if ($this->main->findBerita() != "") {
-				$data['news'] = $this->main->findBerita();
+			if ($this->main_model->find_berita() != NULL) {
+				$data['news'] = $this->main_model->find_berita();
 			} else {
 				$data['news'] = "No Recent News Found...";
 			}
